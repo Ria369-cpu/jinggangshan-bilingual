@@ -18,6 +18,8 @@ const mapModule = {
                  style="left: ${site.mapX}%; top: ${site.mapY}%;"
                  data-id="${site.id}"
                  title="${site.title}">
+                <div class="hotspot-dot"></div>
+                <div class="hotspot-pulse"></div>
                 <div class="hotspot-label">${site.title}</div>
             </div>
         `).join('');
@@ -86,8 +88,9 @@ const mapModule = {
             <div class="modal-time">${time}</div>
             <div class="modal-content-text">${content}</div>
             <div style="margin-bottom: 16px;">
-                <a href="https://apis.map.qq.com/uri/v1/search?keyword=${encodeURIComponent(address)}&referer=myapp" 
+                <a href="https://apis.map.qq.com/uri/v1/marker?marker=title:${encodeURIComponent(title)};addr:${encodeURIComponent(address)}&referer=jinggangshan-archive" 
                    target="_blank" 
+                   rel="noopener noreferrer"
                    style="display: inline-flex; align-items: center; gap: 8px; padding: 10px 24px; background: #c41e3a; color: white; text-decoration: none; border-radius: 20px; font-size: 0.9rem; transition: all 0.3s;"
                    onmouseover="this.style.background='#8b0000'"
                    onmouseout="this.style.background='#c41e3a'">
@@ -95,6 +98,7 @@ const mapModule = {
                 </a>
                 <a href="https://map.baidu.com/search/${encodeURIComponent(address)}" 
                    target="_blank" 
+                   rel="noopener noreferrer"
                    style="display: inline-flex; align-items: center; gap: 8px; padding: 10px 24px; background: #2932e1; color: white; text-decoration: none; border-radius: 20px; font-size: 0.9rem; margin-left: 10px; transition: all 0.3s;"
                    onmouseover="this.style.background='#1e25b3'"
                    onmouseout="this.style.background='#2932e1'">

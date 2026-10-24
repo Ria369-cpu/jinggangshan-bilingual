@@ -1,7 +1,7 @@
 // ===== 智能助手模块 / AI Assistant Module =====
 
 const assistantModule = {
-    apiKey: '',
+    apiKey: 'sk-fda06f633ff64d7bbf260648a3426586',
     apiProvider: 'deepseek',
     apiModel: 'deepseek-chat',
     apiBase: {
@@ -20,7 +20,7 @@ const assistantModule = {
         if (saved) {
             try {
                 const settings = JSON.parse(saved);
-                this.apiKey = settings.apiKey || '';
+                this.apiKey = settings.apiKey || this.apiKey;
                 this.apiProvider = settings.provider || 'deepseek';
                 this.apiModel = settings.model || (this.apiProvider === 'deepseek' ? 'deepseek-chat' : '');
             } catch (e) {

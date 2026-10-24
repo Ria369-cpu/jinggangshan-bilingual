@@ -3,14 +3,69 @@
 const timelineModule = {
     currentFilter: 'all',
     isDragging: false,
+    currentMode: 'compare',
 
     init() {
+        this.initSectionTabs();
         this.initCompareSlider();
+        this.initModeTabs();
         this.initSpotSelector();
         this.renderTimeline();
         this.bindFilterEvents();
         this.bindTimelineEvents();
         this.initScrollAnimation();
+    },
+
+    // 初始化板块切换标签
+    initSectionTabs() {
+        const tabs = document.querySelectorAll('.section-tab');
+        const panels = document.querySelectorAll('.tab-panel');
+        if (!tabs.length || !panels.length) return;
+
+        tabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                const targetTab = tab.dataset.tab;
+
+                // 更新按钮状态
+                tabs.forEach(t => t.classList.remove('active'));
+                tab.classList.add('active');
+
+                // 切换面板
+                panels.forEach(panel => {
+                    if (panel.dataset.panel === targetTab) {
+                        panel.classList.add('active');
+                    } else {
+                        panel.classList.remove('active');
+                    }
+                });
+            });
+        });
+    },
+
+    // 初始化模式切换标签
+    initModeTabs() {
+        const tabs = document.querySelectorAll('.mode-tab');
+        const container = document.querySelector('.compare-container');
+        if (!tabs.length || !container) return;
+
+        tabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                const mode = tab.dataset.mode;
+                this.currentMode = mode;
+
+                // 更新按钮状态
+                tabs.forEach(t => t.classList.remove('active'));
+                tab.classList.add('active');
+
+                // 更新容器样式
+                container.classList.remove('mode-before', 'mode-after');
+                if (mode === 'before') {
+                    container.classList.add('mode-before');
+                } else if (mode === 'after') {
+                    container.classList.add('mode-after');
+                }
+            });
+        });
     },
 
     // 初始化对比滑块

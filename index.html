@@ -33,25 +33,12 @@
 
     <!-- Hero Section -->
     <header class="hero">
+        <div class="hero-bg"></div>
         <div class="hero-overlay"></div>
         <div class="hero-content">
             <h1 class="hero-title" data-i18n="hero.title">井冈山 · 革命摇篮</h1>
             <p class="hero-subtitle" data-i18n="hero.subtitle">Cradle of the Chinese Revolution</p>
             <p class="hero-desc" data-i18n="hero.desc">1927年，毛泽东率领秋收起义部队到达井冈山，创建了中国第一个农村革命根据地。从这里走出了"农村包围城市"的中国革命道路，孕育了伟大的井冈山精神。</p>
-            <div class="hero-stats">
-                <div class="stat-item">
-                    <span class="stat-number" id="statRecords">144+</span>
-                    <span class="stat-label" data-i18n="hero.stats.records">史料记录</span>
-                </div>
-                <div class="stat-item">
-                    <span class="stat-number">10+</span>
-                    <span class="stat-label" data-i18n="hero.stats.spots">红色景点</span>
-                </div>
-                <div class="stat-item">
-                    <span class="stat-number">50+</span>
-                    <span class="stat-label" data-i18n="hero.stats.tags">历史标签</span>
-                </div>
-            </div>
         </div>
         <div class="hero-scroll">
             <span data-i18n="hero.scroll">向下探索</span>
@@ -89,10 +76,21 @@
             <h2 class="section-title" data-i18n="past.title">今昔溯源</h2>
             <p class="section-subtitle" data-i18n="past.subtitle">新旧对比，见证时代变迁</p>
         </div>
+
+        <!-- Section Tabs -->
+        <div class="section-tabs">
+            <button class="section-tab active" data-tab="compare" data-i18n="past.tab.compare">新旧对比</button>
+            <button class="section-tab" data-tab="timeline" data-i18n="past.tab.timeline">史料时间线</button>
+        </div>
         
         <!-- Before/After Slider -->
-        <div class="slider-section">
+        <div class="slider-section tab-panel active" data-panel="compare">
             <div class="compare-slider" id="compareSlider">
+                <div class="compare-mode-tabs">
+                    <button class="mode-tab active" data-mode="compare" data-i18n="past.mode.compare">对比</button>
+                    <button class="mode-tab" data-mode="before" data-i18n="past.mode.before">历史旧貌</button>
+                    <button class="mode-tab" data-mode="after" data-i18n="past.mode.after">今日新颜</button>
+                </div>
                 <div class="compare-container">
                     <div class="compare-before">
                         <img src="https://picsum.photos/seed/jinggangshan-old/800/500" alt="旧貌" id="beforeImg">
@@ -124,8 +122,7 @@
         </div>
 
         <!-- Timeline -->
-        <div class="timeline-section">
-            <h3 class="timeline-title" data-i18n="past.timelineTitle">历史时间线</h3>
+        <div class="timeline-section tab-panel" data-panel="timeline">
             <div class="timeline-filters">
                 <button class="filter-btn active" data-filter="all" data-i18n="past.filter.all">全部</button>
                 <button class="filter-btn" data-filter="event" data-i18n="past.filter.event">革命事件</button>

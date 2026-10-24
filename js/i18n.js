@@ -46,6 +46,11 @@ const i18n = {
             'past.filter.spot': '旧址景点',
             'past.filter.newera': '新时代发展',
             'past.clickDetail': '点击查看详情',
+            'past.tab.compare': '新旧对比',
+            'past.tab.timeline': '史料时间线',
+            'past.mode.compare': '对比',
+            'past.mode.before': '历史旧貌',
+            'past.mode.after': '今日新颜',
 
             // Youth Voice Section
             'youth.title': '青年之声',
@@ -138,6 +143,11 @@ const i18n = {
             'past.filter.spot': 'Sites',
             'past.filter.newera': 'New Era',
             'past.clickDetail': 'Click for details',
+            'past.tab.compare': 'Compare',
+            'past.tab.timeline': 'Timeline',
+            'past.mode.compare': 'Compare',
+            'past.mode.before': 'Historical',
+            'past.mode.after': 'Present',
 
             // Youth Voice Section
             'youth.title': 'Youth Voice',
