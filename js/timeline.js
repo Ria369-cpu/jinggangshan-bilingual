@@ -7,8 +7,6 @@ const timelineModule = {
 
     init() {
         this.initSectionTabs();
-        this.initCompareSlider();
-        this.initModeTabs();
         this.initSpotSelector();
         this.renderTimeline();
         this.bindFilterEvents();
@@ -127,20 +125,17 @@ const timelineModule = {
     // 初始化景点选择器
     initSpotSelector() {
         const select = document.getElementById('spotSelect');
-        const beforeImg = document.getElementById('beforeImg');
-        const afterImg = document.getElementById('afterImg');
+        const sitePhoto = document.getElementById('sitePhoto');
         const beforeText = document.getElementById('beforeStoryText');
         const afterText = document.getElementById('afterStoryText');
-        if (!select || !beforeImg || !afterImg) return;
+        if (!select || !sitePhoto) return;
 
         const updateSpot = () => {
             const spot = select.value;
             const data = comparisonImages[spot];
             if (data) {
-                beforeImg.src = data.before;
-                afterImg.src = data.after;
-                beforeImg.alt = data.title;
-                afterImg.alt = data.title;
+                sitePhoto.src = data.after;
+                sitePhoto.alt = data.title;
                 
                 if (beforeText && afterText) {
                     const lang = i18n.currentLang;

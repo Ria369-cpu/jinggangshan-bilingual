@@ -720,9 +720,28 @@ body {
     border-color: var(--primary-red);
 }
 
-/* 古旧照片滤镜 */
-.compare-before img {
-    filter: sepia(0.7) grayscale(0.3) contrast(1.1) brightness(0.9);
+/* 景点图片展示 */
+.site-photo-section {
+    text-align: center;
+}
+
+.site-photo-container {
+    position: relative;
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto 24px;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+    border: 3px solid var(--gold);
+}
+
+.site-photo-container img {
+    width: 100%;
+    height: auto;
+    display: block;
+    max-height: 500px;
+    object-fit: cover;
 }
 
 /* 古今故事文字卡片 */
@@ -1911,6 +1930,11 @@ body {
         grid-template-columns: 1fr;
         gap: 16px;
         margin-top: 20px;
+    }
+
+    .site-photo-container {
+        border-width: 2px;
+        border-radius: 12px;
     }
 
     .story-card {
