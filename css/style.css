@@ -1653,9 +1653,28 @@ body {
 /* ===== Responsive ===== */
 @media (max-width: 968px) {
     .nav-menu {
+        display: flex;
+        gap: 4px;
+        overflow-x: auto;
+        flex-shrink: 0;
+        max-width: 60%;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+    }
+
+    .nav-menu::-webkit-scrollbar {
         display: none;
     }
-    
+
+    .nav-menu li {
+        flex-shrink: 0;
+    }
+
+    .nav-link {
+        padding: 6px 10px;
+        font-size: 0.85rem;
+    }
+
     .map-container {
         grid-template-columns: 1fr;
     }
@@ -1686,39 +1705,80 @@ body {
         border-right: none !important;
     }
     
-    .hero-stats {
-        gap: 30px;
-    }
-    
     .section {
-        padding: 60px 20px;
+        padding: 30px 15px 60px;
+        min-height: auto;
     }
     
     .ai-chat-container {
         height: 500px;
     }
+
+    .section-tabs {
+        gap: 6px;
+    }
+
+    .section-tab {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+
+    .page-container {
+        padding-top: 60px;
+        min-height: calc(100vh - 60px);
+    }
 }
 
 @media (max-width: 600px) {
     .nav-container {
-        padding: 0 15px;
-        height: 60px;
+        padding: 0 12px;
+        height: 56px;
+        gap: 10px;
+    }
+
+    .nav-logo {
+        gap: 6px;
+    }
+
+    .logo-icon {
+        font-size: 1.2rem;
     }
     
     .logo-text {
-        font-size: 0.9rem;
+        font-size: 0.75rem;
+        max-width: 100px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .nav-menu {
+        max-width: 55%;
+        gap: 2px;
+    }
+
+    .nav-link {
+        padding: 5px 8px;
+        font-size: 0.75rem;
+    }
+
+    .lang-toggle {
+        padding: 4px 8px;
+        font-size: 0.75rem;
     }
     
     .hero-title {
+        font-size: 2rem;
         letter-spacing: 4px;
     }
-    
-    .hero-stats {
-        gap: 20px;
+
+    .hero-subtitle {
+        font-size: 1rem;
     }
-    
-    .stat-number {
-        font-size: 1.8rem;
+
+    .hero-desc {
+        font-size: 0.9rem;
+        line-height: 1.8;
     }
     
     .photo-gallery {
@@ -1730,16 +1790,56 @@ body {
     }
     
     .modal-body {
-        padding: 24px;
+        padding: 20px;
     }
     
     .timeline-filters {
         gap: 6px;
+        flex-wrap: wrap;
+        justify-content: center;
     }
     
     .filter-btn {
         padding: 6px 12px;
         font-size: 0.8rem;
+    }
+
+    .section-title {
+        font-size: 1.5rem;
+    }
+
+    .section-number {
+        font-size: 2rem;
+    }
+
+    .section-subtitle {
+        font-size: 0.9rem;
+    }
+
+    .spot-selector {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .compare-mode-tabs {
+        justify-content: center;
+    }
+
+    .mode-tab {
+        padding: 6px 14px;
+        font-size: 0.8rem;
+    }
+
+    .message-form .form-row {
+        flex-direction: column;
+    }
+
+    .gallery-title {
+        font-size: 1.2rem;
+    }
+
+    .submit-btn {
+        width: 100%;
     }
 }
 
