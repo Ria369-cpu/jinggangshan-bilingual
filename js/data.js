@@ -710,6 +710,30 @@ const initialMessages = [
         content: '朱德的扁担，挑的不只是粮食，更是与战士同甘共苦的信念。新时代的我们，也要有这种担当精神。',
         time: '2026-08-06',
         isTeam: true
+    },
+    {
+        id: 'm7',
+        name: '译路星火实践团',
+        avatar: '🎓',
+        content: '井冈山精神不是博物馆里的陈列，而是流淌在血脉里的力量。站在黄洋界上，那句"山下旌旗在望，山头鼓角相闻"不再是课本里的诗句，而是眼前真实的山河。\n\nJinggangshan Spirit is not an exhibit in a museum, but a power flowing in our blood. Standing on Huangyangjie, the poem "Banners and flags are in sight below the mountain, drums and horns are heard on the peak" is no longer just verses in a textbook, but the real mountains and rivers before our eyes.',
+        time: '2026-08-08',
+        isTeam: true
+    },
+    {
+        id: 'm8',
+        name: '实践团成员F',
+        avatar: '✨',
+        content: '八角楼的灯光虽小，却照亮了中国革命的道路。我们今天翻译红色故事，就是要让这盏灯的光，照得更远，照到世界的每一个角落。\n\nThe light in the Octagonal Building was small, yet it illuminated the path of the Chinese revolution. Today, as we translate red stories, we want to let this lamp shine farther, reaching every corner of the world.',
+        time: '2026-08-07',
+        isTeam: true
+    },
+    {
+        id: 'm9',
+        name: '实践团成员G',
+        avatar: '🌟',
+        content: '在小井红军医院旧址，我读懂了什么是信仰的力量。那些年轻的红军战士，在缺医少药的年代里，用生命守护着革命的火种。作为新时代的青年，我们要把这份精神传承下去。\n\nAt the former site of Xiaojing Red Army Hospital, I came to understand the power of faith. Those young Red Army soldiers, in an era short of medicine and doctors, guarded the spark of revolution with their lives. As youth of the new era, we must carry on this spirit.',
+        time: '2026-08-09',
+        isTeam: true
     }
 ];
 
@@ -832,5 +856,8 @@ const groupPhotos = [
     { id: 9, src: 'images/photos/photo9.jpg', title: '龙江书院参观学习', titleEn: 'Study Visit at Longjiang Academy' },
     { id: 10, src: 'images/photos/photo10.jpg', title: '挑粮小道体验', titleEn: 'Grain-carrying Path Experience' },
     { id: 11, src: 'images/photos/photo11.jpg', title: '红色文化交流活动', titleEn: 'Red Culture Exchange Activity' },
-    { id: 12, src: 'images/photos/photo12.jpg', title: '实践团总结大会', titleEn: 'Practice Team Summary Meeting' }
+    { id: 12, src: 'images/photos/photo12.jpg', title: '实践团总结大会', titleEn: 'Practice Team Summary Meeting' },
+    { id: 13, src: 'images/photos/photo13.jpg', title: '团队合影', titleEn: 'Team Group Photo' },
+    { id: 14, src: 'images/photos/photo14.jpg', title: '实践活动留念', titleEn: 'Practice Activity Souvenir' },
+    { id: 15, src: 'images/photos/photo15.jpg', title: '红色足迹', titleEn: 'Red Footprints' }
 ];
