@@ -720,6 +720,71 @@ body {
     border-color: var(--primary-red);
 }
 
+/* 古旧照片滤镜 */
+.compare-before img {
+    filter: sepia(0.7) grayscale(0.3) contrast(1.1) brightness(0.9);
+}
+
+/* 古今故事文字卡片 */
+.compare-story {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin-top: 32px;
+}
+
+.story-card {
+    background: white;
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: var(--shadow-sm);
+    border-top: 4px solid var(--primary-red);
+    transition: var(--transition);
+}
+
+.story-card:hover {
+    box-shadow: var(--shadow-md);
+    transform: translateY(-2px);
+}
+
+.story-card.story-after {
+    border-top-color: var(--gold);
+}
+
+.story-card h4 {
+    font-family: var(--font-serif);
+    font-size: 1.2rem;
+    color: var(--primary-red);
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.story-card.story-after h4 {
+    color: #b8860b;
+}
+
+.story-card h4::before {
+    content: '';
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    background: var(--primary-red);
+    border-radius: 50%;
+}
+
+.story-card.story-after h4::before {
+    background: var(--gold);
+}
+
+.story-card p {
+    font-size: 0.95rem;
+    line-height: 1.9;
+    color: var(--text-dark);
+    text-align: justify;
+}
+
 /* Timeline */
 .timeline-section {
     max-width: 1000px;
@@ -1840,6 +1905,25 @@ body {
 
     .submit-btn {
         width: 100%;
+    }
+
+    .compare-story {
+        grid-template-columns: 1fr;
+        gap: 16px;
+        margin-top: 20px;
+    }
+
+    .story-card {
+        padding: 18px;
+    }
+
+    .story-card h4 {
+        font-size: 1.05rem;
+    }
+
+    .story-card p {
+        font-size: 0.9rem;
+        line-height: 1.8;
     }
 }
 

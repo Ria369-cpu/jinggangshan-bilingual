@@ -716,35 +716,105 @@ const initialMessages = [
 // 景点新旧对比图片配置
 // Before/after comparison image configuration
 const comparisonImages = {
-    huangyangjie: {
-        before: 'https://picsum.photos/seed/huangyangjie-old/800/500',
-        after: 'https://picsum.photos/seed/huangyangjie-new/800/500',
-        title: '黄洋界',
-        titleEn: 'Huangyangjie'
-    },
-    ciping: {
-        before: 'https://picsum.photos/seed/ciping-old/800/500',
-        after: 'https://picsum.photos/seed/ciping-new/800/500',
-        title: '茨坪',
-        titleEn: 'Ciping'
+    longjiang: {
+        before: 'images/compare/longjiang.jpg',
+        after: 'images/compare/longjiang.jpg',
+        title: '龙江书院',
+        titleEn: 'Longjiang Academy',
+        beforeText: '龙江书院建于清道光年间，是湘赣边界宁冈县的最高学府。1928年4月28日，毛泽东率领的秋收起义部队与朱德、陈毅率领的南昌起义余部在龙江书院实现了历史性的首次会面——这就是著名的"朱毛会师"。两军会师后合编为中国工农红军第四军，朱德任军长，毛泽东任党代表。1927年11月，工农革命军军官教导队也曾设于书院中厅"明道堂"，为根据地培养了首批军事指挥员。',
+        beforeTextEn: 'Built during the Daoguang era of the Qing Dynasty, Longjiang Academy was the highest educational institution in Ninggang County on the Hunan-Jiangxi border. On April 28, 1928, the Autumn Harvest Uprising forces led by Mao Zedong held a historic first meeting with the remaining Nanchang Uprising troops led by Zhu De and Chen Yi at Longjiang Academy—the famous "Zhu-Mao Joining of Forces." The two forces were merged into the Fourth Red Army of the Chinese Workers and Peasants Red Army, with Zhu De as commander and Mao Zedong as political commissar. In November 1927, the Workers and Peasants Revolutionary Army Officer Training Corps was also established in the "Mingdao Hall" of the academy, training the first batch of military commanders for the base area.',
+        afterText: '如今，龙江书院与"毛泽东和朱德会见旧址"连成一体，是全国重点文物保护单位和全国爱国主义教育示范基地。书院按原貌保存，中厅明道堂、左右厢房、天井等建筑完好。每年有数十万党员干部、青年学生和游客前来参观，通过现场教学感受朱毛会师的伟大历史时刻，感悟井冈山精神的诞生与传承。',
+        afterTextEn: 'Today, Longjiang Academy is integrated with the "Site of the Meeting Between Mao Zedong and Zhu De," and is a Major Historical and Cultural Site Protected at the National Level and a National Patriotism Education Demonstration Base. The academy is preserved in its original form, with the Mingdao Hall, wing rooms, and courtyard all intact. Hundreds of thousands of Party cadres, students, and tourists visit each year, experiencing the great historical moment of the Zhu-Mao joining of forces through on-site teaching and appreciating the birth and inheritance of the Jinggangshan Spirit.'
     },
     maoping: {
-        before: 'https://picsum.photos/seed/maoping-old/800/500',
-        after: 'https://picsum.photos/seed/maoping-new/800/500',
+        before: 'images/compare/maoping.jpg',
+        after: 'images/compare/maoping.jpg',
         title: '茅坪八角楼',
-        titleEn: 'Maoping Octagonal Building'
+        titleEn: 'Maoping Octagonal Building',
+        beforeText: '1927年10月7日，毛泽东率工农革命军进驻宁冈茅坪，在袁文才帮助下建立根据地第一所后方医院——攀龙书院后方医院。茅坪八角楼是毛泽东在井冈山时期的重要旧居，因屋顶有八方藻井而得名。1928年，毛泽东在此写下《中国的红色政权为什么能够存在？》和《井冈山的斗争》两篇光辉著作，从理论上回答了"红旗到底打得多久"的疑问，指明了中国革命"农村包围城市、武装夺取政权"的正确道路。八角楼的清油灯，见证了中国革命道路理论的诞生。',
+        beforeTextEn: 'On October 7, 1927, Mao Zedong led the Workers and Peasants Revolutionary Army to station in Maoping, Ninggang, and with the help of Yuan Wencai, established the base area\'s first rear hospital at Panlong Academy. The Octagonal Building in Maoping was Mao Zedong\'s important former residence during the Jinggangshan period, named for its eight-sided caisson ceiling. In 1928, Mao Zedong wrote two brilliant works here: "Why Is It That Red Political Power Can Exist in China?" and "The Struggle in the Jinggang Mountains," which theoretically answered the question "How long can the red flag last?" and pointed out the correct path of the Chinese revolution—"encircling the cities from the countryside and seizing political power by armed force." The oil lamp of the Octagonal Building witnessed the birth of the theory of the Chinese revolutionary road.',
+        afterText: '如今，茅坪革命旧址群已列入第六批全国重点文物保护单位，八角楼按原貌保存并对外开放。楼内陈列着毛泽东当年使用过的书桌、砚台、油灯等文物，墙上挂着他在八角楼工作情景的历史照片。参观者可以亲手摸摸那盏照亮中国革命道路的清油灯，聆听"八角楼的灯光"的故事，感悟实事求是、敢闯新路的井冈山精神。',
+        afterTextEn: 'Today, the Maoping Revolutionary Site Cluster has been listed as one of the sixth batch of Major Historical and Cultural Sites Protected at the National Level. The Octagonal Building is preserved in its original form and open to the public. Inside, cultural relics such as the desk, inkstone, and oil lamp used by Mao Zedong are on display, along with historical photos of him working there. Visitors can touch the oil lamp that illuminated the path of the Chinese revolution, listen to the story of "the light of the Octagonal Building," and appreciate the Jinggangshan Spirit of seeking truth from facts and daring to blaze new trails.'
     },
-    xiaojing: {
-        before: 'https://picsum.photos/seed/xiaojing-old/800/500',
-        after: 'https://picsum.photos/seed/xiaojing-new/800/500',
-        title: '小井红军医院',
-        titleEn: 'Xiaojing Red Army Hospital'
+    huangyangjie: {
+        before: 'images/compare/huangyangjie.jpg',
+        after: 'images/compare/huangyangjie.jpg',
+        title: '黄洋界',
+        titleEn: 'Huangyangjie',
+        beforeText: '黄洋界海拔1343米，是井冈山五大哨口之一，也是茅坪通往井冈山的重要通道。1928年8月，湘赣敌军乘红军主力赴湘南之机，以四个团的兵力进犯黄洋界。当时留守井冈山的红军不足一个营，在朱云卿、何挺颖指挥下，军民凭借险要地形，用竹钉阵、檑木滚石和仅有的一门迫击炮打退了敌人的多次进攻。黄洋界保卫战的胜利，创造了以少胜多的经典战例，毛泽东闻讯后写下了《西江月·井冈山》这首著名词篇。',
+        beforeTextEn: 'At an altitude of 1,343 meters, Huangyangjie is one of the five major passes of Jinggangshan and an important passage from Maoping to the mountain. In August 1928, taking advantage of the main Red Army forces being in southern Hunan, Hunan-Jiangxi enemy forces with four regiments attacked Huangyangjie. At that time, less than one battalion of Red Army troops remained on Jinggangshan. Under the command of Zhu Yunqing and He Tingying, the soldiers and civilians relied on the treacherous terrain to repel multiple enemy attacks using bamboo spike traps, rolling logs and stones, and only one mortar. The victory of the Huangyangjie Defense Battle created a classic example of winning against overwhelming odds. Upon hearing the news, Mao Zedong wrote the famous poem "Xijiang Yue · Jinggangshan."',
+        afterText: '新中国成立后，黄洋界保卫战胜利纪念碑于1960年代建成，1977年改建加固。纪念碑正面刻有朱德题写的"黄洋界保卫战胜利纪念碑"，背面是毛泽东手书的"星星之火，可以燎原"。旁边建有黄洋界哨口营房旧址和红军工事遗址，那门功勋迫击炮也陈列在哨口阵地。今天，黄洋界是井冈山红色旅游的核心景点，每年数百万游客登上黄洋界，重走红军路，感受"敌军围困万千重，我自岿然不动"的英雄气概。',
+        afterTextEn: 'After the founding of New China, the Huangyangjie Defense Battle Victory Monument was built in the 1960s and renovated in 1977. The front of the monument bears the inscription "Huangyangjie Defense Battle Victory Monument" written by Zhu De, and the back features Mao Zedong\'s calligraphy "A single spark can start a prairie fire." Beside it stand the former site of the Huangyangjie sentry barracks and Red Army fortification remains, and the meritorious mortar is also on display at the sentry position. Today, Huangyangjie is a core red tourism attraction of Jinggangshan. Millions of tourists climb Huangyangjie each year, retracing the Red Army path and experiencing the heroic spirit of "surrounded by thousands of enemy troops, we stand firm and unshakable."'
+    },
+    dajing: {
+        before: 'images/compare/dajing.jpg',
+        after: 'images/compare/dajing.jpg',
+        title: '大井朱毛旧居',
+        titleEn: 'Dajing Zhu-Mao Former Residence',
+        beforeText: '大井位于井冈山中心区域的大小五井地区，是井冈山斗争时期红军的重要活动区域。1927年10月，毛泽东率领工农革命军上井冈山后，曾在大井村居住和办公。朱德、陈毅率南昌起义余部上山后，也在大井设立了司令部旧址。大井村是毛泽东、朱德两位伟人经常会面、研究军情、部署作战的地方。房前的"读书石"，是毛泽东当年读书看报、思考中国革命前途的地方。1929年1月，国民党军队第三次"会剿"井冈山时，大井村房屋被全部烧毁，仅存一堵残墙。',
+        beforeTextEn: 'Dajing is located in the Daxiaowujing area in the center of Jinggangshan and was an important activity area for the Red Army during the Jinggangshan struggle period. In October 1927, after leading the Workers and Peasants Revolutionary Army up to Jinggangshan, Mao Zedong lived and worked in Dajing Village. After Zhu De and Chen Yi led the remaining Nanchang Uprising troops up the mountain, they also set up their headquarters site in Dajing. Dajing Village was where the two great men Mao Zedong and Zhu De often met, studied military intelligence, and deployed operations. The "Reading Stone" in front of the house was where Mao Zedong read books and newspapers and pondered the future of the Chinese revolution. In January 1929, during the Kuomintang\'s third "suppression campaign" against Jinggangshan, all houses in Dajing Village were burned down, leaving only a damaged wall.',
+        afterText: '新中国成立后，大井毛泽东旧居、朱德旧居于1960年代按原貌修复重建，将当年残留的那堵土墙嵌进新墙之中，作为历史的见证。旧居内陈列着当年红军使用过的桌椅、床铺、油灯等文物。房前的读书石、屋后的两棵"常青树"（红豆杉和柞树，毛泽东当年经常在此树下看书）都被保护起来。如今大井朱毛旧居是全国重点文物保护单位，也是井冈山红色教育的重要现场教学点。',
+        afterTextEn: 'After the founding of New China, the former residences of Mao Zedong and Zhu De in Dajing were rebuilt in their original style in the 1960s, with the remaining earthen wall from that era embedded in the new wall as a historical witness. Inside the residences, cultural relics such as tables, chairs, beds, and oil lamps used by the Red Army are on display. The Reading Stone in front of the house and the two "evergreen trees" behind the house (a yew and an oak, under which Mao Zedong often read) are all preserved. Today, the Dajing Zhu-Mao Former Residence is a Major Historical and Cultural Site Protected at the National Level and an important on-site teaching point for red education in Jinggangshan.'
+    },
+    shangjing: {
+        before: 'images/compare/shangjing.jpg',
+        after: 'images/compare/shangjing.jpg',
+        title: '上井红军造币厂',
+        titleEn: 'Shangjing Red Army Mint',
+        beforeText: '上井红军造币厂是中国共产党领导下的人民军队历史上第一所造币厂。1928年5月，为了打破敌人的经济封锁、解决根据地的现金困难和发展红色贸易，井冈山革命根据地在上井村创办了红军造币厂。造币厂由王佐负责，从湖南请来造币师傅，利用打土豪缴获的银器和银饰，铸造了带有"工"字标记的银元——"工"字银元，寓意"工农兵政府"。这是中国红色政权发行的第一种金属货币，对于稳定根据地金融、保障军需民用、促进商品流通发挥了重要作用。',
+        beforeTextEn: 'The Shangjing Red Army Mint was the first mint in the history of the people\'s army under the leadership of the Communist Party of China. In May 1928, in order to break the enemy\'s economic blockade, solve the cash shortage in the base area, and develop red trade, the Jinggangshan Revolutionary Base Area established the Red Army Mint in Shangjing Village. The mint was managed by Wang Zuo, who hired minting masters from Hunan. Using silverware and silver ornaments seized from local tyrants, they cast silver dollars marked with the character "工" (gong, meaning worker)—the "工" character silver dollar, symbolizing the "Worker-Peasant-Soldier Government." This was the first metallic currency issued by the Chinese red political power, playing an important role in stabilizing the base area\'s finance, ensuring military and civilian supplies, and promoting commodity circulation.',
+        afterText: '上井红军造币厂旧址于1998年按原貌修复并对外开放。旧址内复原了当年的熔银炉、冲压床、印花台、搅砂机等造币设备和工艺流程，陈列着"工"字银元的实物和复制品，介绍了红色造币的历史背景和重要意义。参观者可以亲手体验银元铸造的过程，了解根据地经济建设的艰辛与智慧。这里是井冈山革命根据地经济建设史的重要见证，也是开展红色财经教育的生动课堂。',
+        afterTextEn: 'The Shangjing Red Army Mint site was restored to its original appearance and opened to the public in 1998. Inside the site, minting equipment and工艺流程 such as silver melting furnaces, stamping machines, printing tables, and sand mixers have been reconstructed. Original and replica "工" character silver dollars are on display, introducing the historical background and significance of red minting. Visitors can experience the silver dollar casting process firsthand and learn about the hardships and wisdom of economic construction in the base area. This site is an important witness to the history of economic construction in the Jinggangshan Revolutionary Base Area and a vivid classroom for red finance education.'
+    },
+    ciping: {
+        before: 'images/compare/ciping.jpg',
+        after: 'images/compare/ciping.jpg',
+        title: '茨坪革命旧址群',
+        titleEn: 'Ciping Revolutionary Site Cluster',
+        beforeText: '茨坪地处井冈山大小五井地区的中心，是井冈山革命根据地的心脏。1927年10月，毛泽东率工农革命军进驻茨坪，在此建立了根据地的指挥中心。井冈山斗争时期，红四军军部、中共湘赣边界特委、湘赣边界工农兵政府、军械处、被服厂、印刷厂、红军医院等重要机关都设在茨坪。毛泽东、朱德、陈毅等领导人经常在茨坪的李家祠、店房等处召开会议，部署作战、研究土地革命和根据地建设。茨坪是井冈山军事斗争、土地革命和政权建设的指挥中枢。',
+        beforeTextEn: 'Located at the center of the Daxiaowujing area of Jinggangshan, Ciping was the heart of the Jinggangshan Revolutionary Base Area. In October 1927, Mao Zedong led the Workers and Peasants Revolutionary Army to station in Ciping and established the command center of the base area here. During the Jinggangshan struggle period, important organs such as the Fourth Red Army headquarters, the Hunan-Jiangxi Border Special Committee of the CPC, the Hunan-Jiangxi Border Worker-Peasant-Soldier Government, the ordnance office, the clothing factory, the printing plant, and the Red Army hospital were all located in Ciping. Leaders such as Mao Zedong, Zhu De, and Chen Yi often held meetings at the Li Family Ancestral Hall and other places in Ciping to deploy operations and study agrarian revolution and base area construction. Ciping was the command center for military struggle, agrarian revolution, and political power building in Jinggangshan.',
+        afterText: '如今，茨坪是井冈山5A级风景名胜区的核心区域，也是井冈山市政府所在地。茨坪革命旧址群中的毛泽东旧居、红四军军部旧址、军械处旧址、被服厂旧址等2006年被列入第六批全国重点文物保护单位。这些革命旧址按原貌保存，陈列着丰富的历史文物和照片。茨坪城区街道整洁、绿树成荫，挹翠湖公园如明珠镶嵌城中，夜景灯光璀璨。每年数百万游客来到茨坪，在革命旧址接受红色教育，在秀美山川中感受井冈山的今昔巨变。',
+        afterTextEn: 'Today, Ciping is the core area of the Jinggangshan 5A-level Scenic Area and the seat of the Jinggangshan municipal government. The Ciping Revolutionary Site Cluster, including Mao Zedong\'s former residence, the Fourth Red Army headquarters site, the ordnance office site, and the clothing factory site, was listed in the sixth batch of Major Historical and Cultural Sites Protected at the National Level in 2006. These revolutionary sites are preserved in their original form, displaying rich historical relics and photos. Ciping city has clean streets and lush trees, with Yicui Lake Park like a pearl in the city and brilliant night scenery. Millions of tourists come to Ciping every year, receiving red education at revolutionary sites and experiencing the great changes of Jinggangshan from past to present amid beautiful mountains and rivers.'
+    },
+    cemetery: {
+        before: 'images/compare/cemetery.jpg',
+        after: 'images/compare/cemetery.jpg',
+        title: '井冈山革命烈士陵园',
+        titleEn: 'Jinggangshan Revolutionary Martyrs Cemetery',
+        beforeText: '井冈山斗争时期，无数革命先烈为了中国人民的解放事业，在这块红色土地上献出了宝贵的生命。在井冈山两年零四个月的斗争中，共有4.8万余名革命烈士牺牲，其中有名有姓的只有15744人，大多数是无名英雄。他们中有参加过南昌起义、秋收起义的老战士，有来自湖南、江西的农民赤卫队员，有红军医院的医护人员和伤病员，还有许多为革命通风报信、运送物资的普通群众。他们用鲜血和生命铸就了井冈山精神的丰碑。',
+        beforeTextEn: 'During the Jinggangshan struggle period, countless revolutionary martyrs sacrificed their precious lives on this red land for the liberation cause of the Chinese people. In the two years and four months of struggle on Jinggangshan, more than 48,000 revolutionary martyrs died, of whom only 15,744 were known by name—the majority were unsung heroes. Among them were veterans who participated in the Nanchang Uprising and Autumn Harvest Uprising, peasant Red Guard members from Hunan and Jiangxi, medical staff and wounded soldiers in Red Army hospitals, and many ordinary people who delivered intelligence and supplies for the revolution. They used their blood and lives to forge the monument of the Jinggangshan Spirit.',
+        afterText: '井冈山革命烈士陵园建于1987年，坐落在茨坪北面的北岩峰上，占地400亩。陵园由纪念堂、碑林、雕塑园、纪念碑四大部分组成。纪念堂内陈列着革命烈士的名录和遗像，"死难烈士万岁"的题词庄严肃穆。碑林陈列着党和国家领导人、老红军战士的题词100余块。雕塑园塑造了19位井冈山斗争时期主要领导人的青铜像。1997年，由邓小平题字的"井冈山革命烈士纪念碑"落成。如今，这里是全国爱国主义教育示范基地，每年都有无数人前来瞻仰凭吊，缅怀先烈、传承精神。',
+        afterTextEn: 'The Jinggangshan Revolutionary Martyrs Cemetery was built in 1987 on Beiyan Peak north of Ciping, covering 400 mu. The cemetery consists of four major parts: the Memorial Hall, the Stele Forest, the Sculpture Park, and the Monument. The Memorial Hall displays the names and portraits of revolutionary martyrs, with the solemn inscription "Long live the martyrs who died!" The Stele Forest displays more than 100 inscriptions by Party and state leaders and veteran Red Army soldiers. The Sculpture Park features bronze statues of 19 major leaders of the Jinggangshan struggle period. In 1997, the "Jinggangshan Revolutionary Martyrs Monument" with an inscription by Deng Xiaoping was completed. Today, this is a National Patriotism Education Demonstration Base, where countless people come to pay their respects each year, honoring the martyrs and inheriting their spirit.'
     },
     museum: {
-        before: 'https://picsum.photos/seed/museum-old/800/500',
-        after: 'https://picsum.photos/seed/museum-new/800/500',
+        before: 'images/compare/museum.jpg',
+        after: 'images/compare/museum.jpg',
         title: '井冈山革命博物馆',
-        titleEn: 'Jinggangshan Revolutionary Museum'
+        titleEn: 'Jinggangshan Revolutionary Museum',
+        beforeText: '井冈山革命博物馆是新中国成立后最早兴建的革命博物馆之一。1958年经中央批准兴建，1959年10月在中华人民共和国成立十周年之际建成开放，朱德委员长亲笔题写馆名。老馆位于茨坪红军北路，占地面积约1.7公顷，建筑面积约3000平方米。建馆之初，博物馆承担着征集、保管、研究和展示井冈山革命斗争历史文物的重要使命，收藏了大量珍贵的革命文物、文献资料和历史照片，成为系统展示井冈山革命根据地光辉历史的重要阵地。',
+        beforeTextEn: 'The Jinggangshan Revolutionary Museum is one of the earliest revolutionary museums built after the founding of New China. Approved by the central government in 1958, it was completed and opened in October 1959 on the 10th anniversary of the founding of the People\'s Republic of China, with the museum name personally inscribed by Chairman Zhu De. The old museum was located on Hongjun North Road in Ciping, covering about 1.7 hectares with a building area of about 3,000 square meters. Since its founding, the museum has undertaken the important mission of collecting, preserving, researching, and displaying historical relics of the Jinggangshan revolutionary struggle, holding a large number of precious revolutionary relics, documentary materials, and historical photos, becoming an important position for systematically displaying the glorious history of the Jinggangshan Revolutionary Base Area.',
+        afterText: '2007年10月，位于茨坪红军南路的井冈山革命博物馆新馆建成开放。新馆建筑面积2万平方米，陈列面积7200平方米，由中国工程院院士、著名建筑设计师程泰宁设计，建筑造型以"井"字为主题，气势恢宏。博物馆馆藏文物3万余件、文献资料7000多件，设有"中国革命的摇篮"基本陈列，通过实物、图片、场景复原、多媒体等多种手段，全面系统地展示了井冈山革命根据地的斗争历史。现为全国首批国家一级博物馆、全国爱国主义教育示范基地，每年接待观众超过百万人次。',
+        afterTextEn: 'In October 2007, the new Jinggangshan Revolutionary Museum on Hongjun South Road in Ciping was completed and opened. The new museum has a building area of 20,000 square meters and an exhibition area of 7,200 square meters, designed by academician of the Chinese Academy of Engineering and renowned architect Cheng Taining, with the architectural theme of the character "井" (well), presenting a magnificent appearance. The museum holds more than 30,000 cultural relics and over 7,000 documentary materials, and features the basic exhibition "Cradle of the Chinese Revolution," comprehensively and systematically displaying the struggle history of the Jinggangshan Revolutionary Base Area through various means such as artifacts, pictures, scene reconstructions, and multimedia. It is now one of the first batch of National First-Class Museums and a National Patriotism Education Demonstration Base, receiving over one million visitors annually.'
+    },
+    longtan: {
+        before: 'images/compare/longtan.jpg',
+        after: 'images/compare/longtan.jpg',
+        title: '龙潭瀑布',
+        titleEn: 'Longtan Waterfall',
+        beforeText: '龙潭位于井冈山北面的小井附近，因五神河在不到两公里的流程中形成了五潭五瀑而得名。井冈山斗争时期，龙潭一带是红军的重要活动区域。小井红军医院就设在附近的山谷中，红军伤病员在此治疗休养。龙潭周边的山林中，曾是红军储备粮食、隐藏物资、开展游击训练的地方。据当地老人回忆，当年红军战士常到龙潭取水洗衣，清澈的潭水映照过红军的身影，瀑布的轰鸣声伴随着红军的歌声。龙潭见证了红军战士在艰苦环境中的乐观与坚定。',
+        beforeTextEn: 'Longtan (Dragon Pool) is located near Xiaojing in the northern part of Jinggangshan, named for the five pools and five waterfalls formed by the Wushen River in less than two kilometers of flow. During the Jinggangshan struggle period, the Longtan area was an important activity zone for the Red Army. The Xiaojing Red Army Hospital was located in the nearby valley, where Red Army wounded and sick soldiers received treatment and recuperated. The forests around Longtan were places where the Red Army stored grain, hid supplies, and conducted guerrilla training. According to recollections of local elders, Red Army soldiers often came to Longtan to fetch water and wash clothes; the clear pool water reflected the soldiers\' figures, and the roar of the waterfalls accompanied their songs. Longtan witnessed the optimism and determination of Red Army soldiers amid harsh conditions.',
+        afterText: '如今，龙潭是井冈山国家级风景名胜区的核心自然景观之一，被誉为"井冈第一潭"。五潭五瀑形态各异：碧玉潭瀑布落差67米，水帘潭宛如白帘，珍珠潭似银珠散落，飞凤潭如凤凰展翅，仙女潭宛若仙女下凡。景区内修建了悬空栈道和索道，游客可以沿步道深入峡谷，近距离欣赏五级瀑布的壮丽景色。龙潭的绿水青山与红色历史交相辉映，既是观光避暑的胜地，也是感悟井冈山自然与人文交融的绝佳去处。',
+        afterTextEn: 'Today, Longtan is one of the core natural landscapes of the Jinggangshan National Scenic Area, known as the "First Pool of Jinggangshan." The five pools and five waterfalls each have distinctive forms: the Biyu Pool waterfall drops 67 meters, the Shuilian Pool resembles a white curtain, the Zhenzhu Pool looks like scattered silver pearls, the Feifeng Pool is like a phoenix spreading its wings, and the Xiannü Pool appears as a fairy descending to earth. Suspension walkways and cable cars have been built in the scenic area, allowing visitors to explore the canyon along trails and appreciate the magnificent five-tier waterfalls up close. Longtan\'s green mountains and clear waters complement its red history, making it both a scenic summer resort and an excellent place to experience the fusion of Jinggangshan\'s nature and culture.'
+    },
+    nanshan: {
+        before: 'images/compare/nanshan.jpg',
+        after: 'images/compare/nanshan.jpg',
+        title: '南山公园火炬广场',
+        titleEn: 'Nanshan Park Torch Square',
+        beforeText: '南山位于茨坪南端，海拔800余米，是井冈山斗争时期红军的重要哨位和瞭望点。站在南山之巅，可以俯瞰整个茨坪盆地，观察周边山路上的动向，及时发现来犯之敌。当年红军在南山设立了岗哨和瞭望台，战士们日夜守卫着根据地的南大门。南山的山林也是红军开展军事训练、进行政治学习的场所。据记载，红军战士曾在南山顶举着火把集会，火光映照夜空，象征着革命的火种永不熄灭，照亮中国革命前进的道路。',
+        beforeTextEn: 'Nanshan (South Mountain) is located at the southern end of Ciping, at an altitude of over 800 meters. It was an important sentry and observation point for the Red Army during the Jinggangshan struggle period. Standing at the summit of Nanshan, one can overlook the entire Ciping basin, observe movements on surrounding mountain roads, and detect invading enemies in time. Back then, the Red Army set up sentry posts and observation towers on Nanshan, with soldiers guarding the southern gate of the base area day and night. The forests of Nanshan were also places where the Red Army conducted military training and political study. According to records, Red Army soldiers once held torch rallies on the Nanshan summit, their fire illuminating the night sky, symbolizing that the revolutionary flame would never be extinguished and would illuminate the path of the Chinese revolution.',
+        afterText: '如今，南山公园是井冈山茨坪城区的标志性景观之一。山顶新建的火炬广场上，一座高达36.7米的巨型"井冈星火"火炬雕塑巍然耸立，寓意"星星之火，可以燎原"——36.7米的高度代表1927年井冈山革命根据地创建。火炬雕塑底座设有展厅，展示井冈山精神的传承与发展。公园内修建了登山步道、观景台和休息长廊。夜幕降临时，火炬雕塑点亮灯光，从茨坪城区远远望去，熊熊燃烧的火炬象征着井冈山精神代代相传，成为革命圣地的新地标。',
+        afterTextEn: 'Today, Nanshan Park is one of the iconic landscapes of Ciping city in Jinggangshan. At the newly built Torch Square on the mountaintop stands a giant 36.7-meter-tall "Jinggang Spark" torch sculpture, symbolizing "a single spark can start a prairie fire"—the 36.7-meter height represents the year 1927 when the Jinggangshan Revolutionary Base Area was founded. An exhibition hall at the base of the torch sculpture displays the inheritance and development of the Jinggangshan Spirit. Mountain trails, observation decks, and rest corridors have been built in the park. When night falls, the torch sculpture lights up, and seen from afar in Ciping city, the blazing torch symbolizes the Jinggangshan Spirit being passed down through generations, becoming a new landmark of the revolutionary holy land.'
     }
 };
 

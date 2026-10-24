@@ -129,9 +129,11 @@ const timelineModule = {
         const select = document.getElementById('spotSelect');
         const beforeImg = document.getElementById('beforeImg');
         const afterImg = document.getElementById('afterImg');
+        const beforeText = document.getElementById('beforeStoryText');
+        const afterText = document.getElementById('afterStoryText');
         if (!select || !beforeImg || !afterImg) return;
 
-        select.addEventListener('change', () => {
+        const updateSpot = () => {
             const spot = select.value;
             const data = comparisonImages[spot];
             if (data) {
@@ -139,8 +141,24 @@ const timelineModule = {
                 afterImg.src = data.after;
                 beforeImg.alt = data.title;
                 afterImg.alt = data.title;
+                
+                if (beforeText && afterText) {
+                    const lang = i18n.currentLang;
+                    beforeText.textContent = lang === 'zh' ? data.beforeText : data.beforeTextEn;
+                    afterText.textContent = lang === 'zh' ? data.afterText : data.afterTextEn;
+                }
             }
+        };
+
+        select.addEventListener('change', updateSpot);
+        
+        // 监听语言切换事件
+        document.addEventListener('langChange', () => {
+            updateSpot();
         });
+        
+        // 初始化默认景点
+        updateSpot();
     },
 
     // 渲染时间线
