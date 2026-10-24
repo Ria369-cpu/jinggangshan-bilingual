@@ -135,6 +135,34 @@ body {
     margin: 0 6px;
 }
 
+/* ===== Page View System ===== */
+.page-view {
+    display: none;
+    animation: pageFadeIn 0.5s ease;
+}
+
+.page-view.active {
+    display: block;
+}
+
+@keyframes pageFadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.page-container {
+    min-height: calc(100vh - 70px);
+    padding-top: 70px;
+}
+
+.hero.page-view {
+    display: none;
+}
+
+.hero.page-view.active {
+    display: flex;
+}
+
 /* ===== Hero Section ===== */
 .hero {
     position: relative;
@@ -260,9 +288,10 @@ body {
 
 /* ===== Section Common ===== */
 .section {
-    padding: 100px 30px;
+    padding: 40px 30px 80px;
     max-width: 1400px;
     margin: 0 auto;
+    min-height: calc(100vh - 70px);
 }
 
 .section-header {
@@ -1618,16 +1647,7 @@ body {
 }
 
 .lightbox-caption {
-    position: absolute;
-    bottom: 30px;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 2;
-    color: white;
-    font-size: 0.95rem;
-    background: rgba(0, 0, 0, 0.6);
-    padding: 8px 20px;
-    border-radius: 20px;
+    display: none;
 }
 
 /* ===== Responsive ===== */

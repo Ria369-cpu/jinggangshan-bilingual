@@ -16,10 +16,11 @@
                 <span class="logo-text" data-i18n="nav.title">井冈山史料双语检索智能平台</span>
             </div>
             <ul class="nav-menu">
-                <li><a href="#map-tour" class="nav-link active" data-section="map-tour" data-i18n="nav.map">地图导览</a></li>
-                <li><a href="#past-present" class="nav-link" data-section="past-present" data-i18n="nav.past">今昔溯源</a></li>
-                <li><a href="#youth-voice" class="nav-link" data-section="youth-voice" data-i18n="nav.youth">青年之声</a></li>
-                <li><a href="#ai-assistant" class="nav-link" data-section="ai-assistant" data-i18n="nav.ai">智能助手</a></li>
+                <li><a href="#" class="nav-link active" data-page="home" data-i18n="nav.home">首页</a></li>
+                <li><a href="#" class="nav-link" data-page="map-tour" data-i18n="nav.map">地图导览</a></li>
+                <li><a href="#" class="nav-link" data-page="past-present" data-i18n="nav.past">今昔溯源</a></li>
+                <li><a href="#" class="nav-link" data-page="youth-voice" data-i18n="nav.youth">青年之声</a></li>
+                <li><a href="#" class="nav-link" data-page="ai-assistant" data-i18n="nav.ai">智能助手</a></li>
             </ul>
             <div class="nav-actions">
                 <button class="lang-toggle" id="langToggle">
@@ -31,8 +32,8 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <header class="hero">
+    <!-- Hero Section (Home Page) -->
+    <header class="hero page-view active" id="page-home">
         <div class="hero-bg"></div>
         <div class="hero-overlay"></div>
         <div class="hero-content">
@@ -40,14 +41,11 @@
             <p class="hero-subtitle" data-i18n="hero.subtitle">Cradle of the Chinese Revolution</p>
             <p class="hero-desc" data-i18n="hero.desc">1927年，毛泽东率领秋收起义部队到达井冈山，创建了中国第一个农村革命根据地。从这里走出了"农村包围城市"的中国革命道路，孕育了伟大的井冈山精神。</p>
         </div>
-        <div class="hero-scroll">
-            <span data-i18n="hero.scroll">向下探索</span>
-            <div class="scroll-arrow">↓</div>
-        </div>
     </header>
 
+    <main class="page-container">
     <!-- Section 1: Map Tour -->
-    <section id="map-tour" class="section section-map">
+    <section id="page-map-tour" class="section section-map page-view" data-page="map-tour">
         <div class="section-header">
             <span class="section-number">01</span>
             <h2 class="section-title" data-i18n="map.title">地图导览</h2>
@@ -70,7 +68,7 @@
     </section>
 
     <!-- Section 2: Past & Present -->
-    <section id="past-present" class="section section-past">
+    <section id="page-past-present" class="section section-past page-view" data-page="past-present">
         <div class="section-header">
             <span class="section-number">02</span>
             <h2 class="section-title" data-i18n="past.title">今昔溯源</h2>
@@ -137,7 +135,7 @@
     </section>
 
     <!-- Section 3: Youth Voice -->
-    <section id="youth-voice" class="section section-youth">
+    <section id="page-youth-voice" class="section section-youth page-view" data-page="youth-voice">
         <div class="section-header">
             <span class="section-number">03</span>
             <h2 class="section-title" data-i18n="youth.title">青年之声</h2>
@@ -184,7 +182,7 @@
     </section>
 
     <!-- Section 4: AI Assistant -->
-    <section id="ai-assistant" class="section section-ai">
+    <section id="page-ai-assistant" class="section section-ai page-view" data-page="ai-assistant">
         <div class="section-header">
             <span class="section-number">04</span>
             <h2 class="section-title" data-i18n="ai.title">智能助手</h2>
@@ -250,9 +248,10 @@
             <div class="chat-disclaimer" data-i18n="ai.disclaimer">* 回答基于已有史料生成，仅供学习参考</div>
         </div>
     </section>
+    </main>
 
     <!-- Footer -->
-    <footer class="footer">
+    <footer class="footer" id="mainFooter">
         <div class="footer-content">
             <div class="footer-section">
                 <h4 data-i18n="footer.about">关于平台</h4>

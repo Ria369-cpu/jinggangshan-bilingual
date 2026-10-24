@@ -7,6 +7,7 @@ const i18n = {
         zh: {
             // Navigation
             'nav.title': '井冈山史料双语检索智能平台',
+            'nav.home': '首页',
             'nav.map': '地图导览',
             'nav.past': '今昔溯源',
             'nav.youth': '青年之声',
@@ -104,6 +105,7 @@ const i18n = {
         en: {
             // Navigation
             'nav.title': 'Jinggangshan Bilingual Historical Archive',
+            'nav.home': 'Home',
             'nav.map': 'Map Tour',
             'nav.past': 'Past & Present',
             'nav.youth': 'Youth Voice',

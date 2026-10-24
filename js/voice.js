@@ -198,8 +198,6 @@ const voiceModule = {
         
         document.getElementById('lightboxImage').src = photo.src;
         document.getElementById('lightboxImage').alt = lang === 'zh' ? photo.title : photo.titleEn;
-        document.getElementById('lightboxCaption').textContent = 
-            `${lang === 'zh' ? photo.title : photo.titleEn} (${this.currentPhotoIndex + 1}/${groupPhotos.length})`;
     },
 
     // 上一张
