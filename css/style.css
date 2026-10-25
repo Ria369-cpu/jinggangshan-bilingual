@@ -806,6 +806,67 @@ body {
     background: var(--gold);
 }
 
+.story-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 12px;
+}
+
+.story-header h4 {
+    margin-bottom: 0;
+}
+
+.audio-btn {
+    background: linear-gradient(135deg, var(--primary-red), #a0182e);
+    border: none;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    color: white;
+    transition: var(--transition);
+    box-shadow: 0 2px 8px rgba(196, 30, 58, 0.3);
+    flex-shrink: 0;
+}
+
+.audio-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 12px rgba(196, 30, 58, 0.4);
+}
+
+.audio-btn:active {
+    transform: scale(0.95);
+}
+
+.audio-btn.playing {
+    background: linear-gradient(135deg, #2e7d32, #1b5e20);
+    animation: audioPulse 1.5s ease-in-out infinite;
+}
+
+@keyframes audioPulse {
+    0%, 100% { box-shadow: 0 2px 8px rgba(46, 125, 50, 0.3); }
+    50% { box-shadow: 0 2px 16px rgba(46, 125, 50, 0.6); }
+}
+
+.story-card.story-after .audio-btn {
+    background: linear-gradient(135deg, var(--gold), #b8860b);
+    box-shadow: 0 2px 8px rgba(212, 165, 116, 0.3);
+}
+
+.story-card.story-after .audio-btn:hover {
+    box-shadow: 0 4px 12px rgba(212, 165, 116, 0.4);
+}
+
+.story-card.story-after .audio-btn.playing {
+    background: linear-gradient(135deg, #2e7d32, #1b5e20);
+    animation: audioPulse 1.5s ease-in-out infinite;
+}
+
 .story-card p {
     font-size: 0.95rem;
     line-height: 1.9;

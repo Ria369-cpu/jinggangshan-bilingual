@@ -104,11 +104,21 @@
                 </div>
                 <div class="compare-story">
                     <div class="story-card story-before">
-                        <h4 data-i18n="past.storyBefore">历史故事</h4>
+                        <div class="story-header">
+                            <h4 data-i18n="past.storyBefore">历史故事</h4>
+                            <button class="audio-btn" id="audioBeforeBtn" style="display:none;" title="播放音频">
+                                <span class="audio-icon">🔊</span>
+                            </button>
+                        </div>
                         <p id="beforeStoryText"></p>
                     </div>
                     <div class="story-card story-after">
-                        <h4 data-i18n="past.storyAfter">今日面貌</h4>
+                        <div class="story-header">
+                            <h4 data-i18n="past.storyAfter">今日面貌</h4>
+                            <button class="audio-btn" id="audioAfterBtn" style="display:none;" title="播放音频">
+                                <span class="audio-icon">🔊</span>
+                            </button>
+                        </div>
                         <p id="afterStoryText"></p>
                     </div>
                 </div>

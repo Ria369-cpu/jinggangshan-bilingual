@@ -4,14 +4,83 @@ const timelineModule = {
     currentFilter: 'all',
     isDragging: false,
     currentMode: 'compare',
+    currentAudio: null,
 
     init() {
         this.initSectionTabs();
         this.initSpotSelector();
+        this.initAudioPlayers();
         this.renderTimeline();
         this.bindFilterEvents();
         this.bindTimelineEvents();
         this.initScrollAnimation();
+    },
+
+    // 初始化音频播放器
+    initAudioPlayers() {
+        const beforeBtn = document.getElementById('audioBeforeBtn');
+        const afterBtn = document.getElementById('audioAfterBtn');
+        if (!beforeBtn || !afterBtn) return;
+
+        beforeBtn.addEventListener('click', () => this.toggleAudio('before'));
+        afterBtn.addEventListener('click', () => this.toggleAudio('after'));
+    },
+
+    // 切换音频播放/暂停
+    toggleAudio(type) {
+        const select = document.getElementById('spotSelect');
+        const spot = select ? select.value : 'longjiang';
+        const data = comparisonImages[spot];
+        if (!data) return;
+
+        const audioSrc = type === 'before' ? data.audioBefore : data.audioAfter;
+        const btn = type === 'before' 
+            ? document.getElementById('audioBeforeBtn')
+            : document.getElementById('audioAfterBtn');
+        const icon = btn.querySelector('.audio-icon');
+
+        if (!audioSrc) return;
+
+        // 如果有其他音频在播放，先暂停
+        if (this.currentAudio && this.currentAudio !== btn._audio) {
+            this.currentAudio.pause();
+            const otherBtn = this.currentAudio._type === 'before'
+                ? document.getElementById('audioBeforeBtn')
+                : document.getElementById('audioAfterBtn');
+            if (otherBtn) {
+                otherBtn.classList.remove('playing');
+                const otherIcon = otherBtn.querySelector('.audio-icon');
+                if (otherIcon) otherIcon.textContent = '🔊';
+            }
+        }
+
+        // 如果点击的是当前正在播放的音频，暂停
+        if (btn._audio && this.currentAudio === btn._audio && !btn._audio.paused) {
+            btn._audio.pause();
+            btn.classList.remove('playing');
+            icon.textContent = '🔊';
+            this.currentAudio = null;
+            return;
+        }
+
+        // 创建或播放音频
+        if (!btn._audio) {
+            btn._audio = new Audio(audioSrc);
+            btn._audio._type = type;
+            btn._audio.addEventListener('ended', () => {
+                btn.classList.remove('playing');
+                icon.textContent = '🔊';
+                this.currentAudio = null;
+            });
+        }
+
+        btn._audio.play().then(() => {
+            btn.classList.add('playing');
+            icon.textContent = '⏸️';
+            this.currentAudio = btn._audio;
+        }).catch(err => {
+            console.error('音频播放失败:', err);
+        });
     },
 
     // 初始化板块切换标签
@@ -142,6 +211,32 @@ const timelineModule = {
                     beforeText.textContent = lang === 'zh' ? data.beforeText : data.beforeTextEn;
                     afterText.textContent = lang === 'zh' ? data.afterText : data.afterTextEn;
                 }
+
+                // 显示/隐藏音频按钮
+                const beforeBtn = document.getElementById('audioBeforeBtn');
+                const afterBtn = document.getElementById('audioAfterBtn');
+                if (beforeBtn) {
+                    beforeBtn.style.display = data.audioBefore ? 'flex' : 'none';
+                    // 切换景点时重置音频状态
+                    if (beforeBtn._audio) {
+                        beforeBtn._audio.pause();
+                        beforeBtn.classList.remove('playing');
+                        const icon = beforeBtn.querySelector('.audio-icon');
+                        if (icon) icon.textContent = '🔊';
+                        beforeBtn._audio = null;
+                    }
+                }
+                if (afterBtn) {
+                    afterBtn.style.display = data.audioAfter ? 'flex' : 'none';
+                    if (afterBtn._audio) {
+                        afterBtn._audio.pause();
+                        afterBtn.classList.remove('playing');
+                        const icon = afterBtn.querySelector('.audio-icon');
+                        if (icon) icon.textContent = '🔊';
+                        afterBtn._audio = null;
+                    }
+                }
+                this.currentAudio = null;
             }
         };
 
