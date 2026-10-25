@@ -170,7 +170,7 @@ body {
 /* ===== Hero Section ===== */
 .hero {
     position: relative;
-    min-height: auto;
+    min-height: calc(100vh - 70px);
     margin-top: 70px;
     display: flex;
     flex-direction: column;
