@@ -40,7 +40,10 @@ const voiceModule = {
 
         container.innerHTML = groupPhotos.map((photo, index) => `
             <div class="gallery-item" data-index="${index}">
-                <img src="${photo.src}" alt="${lang === 'zh' ? photo.title : photo.titleEn}" loading="lazy">
+                <div class="gallery-img-wrap">
+                    <img src="${photo.src}" alt="${lang === 'zh' ? photo.title : photo.titleEn}" loading="lazy">
+                </div>
+                <div class="gallery-caption">${lang === 'zh' ? photo.title : photo.titleEn}</div>
             </div>
         `).join('');
     },
