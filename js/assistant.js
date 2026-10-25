@@ -58,9 +58,22 @@ const assistantModule = {
 
     // 绑定事件
     bindEvents() {
-        // 设置面板切换
+        // 设置面板切换（带密码验证）
         document.getElementById('apiSettingsBtn')?.addEventListener('click', () => {
-            document.getElementById('apiSettingsPanel').classList.toggle('show');
+            const panel = document.getElementById('apiSettingsPanel');
+            // 如果面板已经显示，直接关闭（不需要密码）
+            if (panel.classList.contains('show')) {
+                panel.classList.remove('show');
+                return;
+            }
+            // 弹出密码输入框
+            const password = prompt('请输入管理员密码：');
+            if (password === null) return; // 用户取消
+            if (password === 'ylxh666') {
+                panel.classList.add('show');
+            } else {
+                alert('密码错误，请重试！');
+            }
         });
 
         // 保存设置
