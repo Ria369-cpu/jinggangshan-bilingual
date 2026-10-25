@@ -15,6 +15,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 模态框
     initModal();
+
+    // 团队合影灯箱
+    initTeamPhotoLightbox();
 });
 
 // 导航 - 页面切换
@@ -110,6 +113,53 @@ function initModal() {
     document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape' && modal.classList.contains('show')) {
             closeModal();
+        }
+    });
+}
+
+// 团队合影灯箱
+function initTeamPhotoLightbox() {
+    const teamPhotoFrame = document.querySelector('.team-photo-frame');
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImage = document.getElementById('lightboxImage');
+    const lightboxCaption = document.getElementById('lightboxCaption');
+    const lightboxOverlay = document.getElementById('lightboxOverlay');
+    const lightboxClose = document.getElementById('lightboxClose');
+    const lightboxPrev = document.getElementById('lightboxPrev');
+    const lightboxNext = document.getElementById('lightboxNext');
+
+    if (!teamPhotoFrame || !lightbox) return;
+
+    const img = teamPhotoFrame.querySelector('.team-photo');
+    const caption = teamPhotoFrame.querySelector('.team-photo-caption');
+
+    function openTeamLightbox() {
+        lightboxImage.src = img.src;
+        lightboxImage.alt = img.alt;
+        lightboxCaption.textContent = caption.textContent;
+        lightbox.classList.add('show');
+        document.body.style.overflow = 'hidden';
+        // 隐藏上下张按钮（单张图）
+        if (lightboxPrev) lightboxPrev.style.display = 'none';
+        if (lightboxNext) lightboxNext.style.display = 'none';
+    }
+
+    function closeTeamLightbox() {
+        lightbox.classList.remove('show');
+        document.body.style.overflow = '';
+        if (lightboxPrev) lightboxPrev.style.display = '';
+        if (lightboxNext) lightboxNext.style.display = '';
+    }
+
+    teamPhotoFrame.addEventListener('click', openTeamLightbox);
+
+    lightboxOverlay.addEventListener('click', closeTeamLightbox);
+    lightboxClose.addEventListener('click', closeTeamLightbox);
+
+    // ESC键关闭
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && lightbox.classList.contains('show')) {
+            closeTeamLightbox();
         }
     });
 }
