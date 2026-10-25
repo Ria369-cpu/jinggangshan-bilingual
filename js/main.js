@@ -46,6 +46,8 @@ function initNavigation() {
     if (footer) {
         footer.style.display = 'none';
     }
+    // 首页时禁止body纵向滚动
+    document.body.classList.add('home-active');
 
     function switchPage(pageName) {
         // 更新导航激活状态
@@ -71,8 +73,10 @@ function initNavigation() {
         if (footer) {
             if (pageName === 'home') {
                 footer.style.display = 'none';
+                document.body.classList.add('home-active');
             } else {
                 footer.style.display = 'block';
+                document.body.classList.remove('home-active');
             }
         }
 
