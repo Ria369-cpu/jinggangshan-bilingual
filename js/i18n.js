@@ -28,6 +28,7 @@ const i18n = {
             'intro.teamTitle': '译路星火实践团',
             'intro.teamDesc': '译路星火实践团由热爱红色文化的青年学子组成，秉承"翻译传递力量，星火照亮初心"的理念，深入井冈山革命根据地开展实地调研。我们用双语讲述红色故事，用科技赋能文化传播，让井冈山精神在新时代绽放新的光芒。',
             'intro.teamPhotoCaption': '译路星火实践团 · 井冈山合影',
+            'intro.teamPhotoZoom': '🔍 点击放大',
 
             // Map Section
             'map.title': '地图导览',
@@ -140,6 +141,7 @@ const i18n = {
             'intro.teamTitle': 'Yi Lu Xinghuo Practice Group',
             'intro.teamDesc': 'The Yi Lu Xinghuo (Translation Path · Spark) Practice Group consists of young students who love red culture. Adhering to the philosophy of "Translation conveys power, sparks illuminate the original aspiration," we conducted in-depth field research in the Jinggangshan revolutionary base. We tell red stories bilingually and empower cultural communication with technology, letting the Jinggangshan Spirit shine anew in the new era.',
             'intro.teamPhotoCaption': 'Yi Lu Xinghuo Practice Group · Jinggangshan Photo',
+            'intro.teamPhotoZoom': '🔍 Click to zoom',
 
             // Map Section
             'map.title': 'Map Tour',
