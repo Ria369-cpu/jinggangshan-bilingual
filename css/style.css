@@ -166,15 +166,15 @@ body {
 /* ===== Hero Section ===== */
 .hero {
     position: relative;
-    min-height: calc(100vh - 70px);
+    min-height: auto;
     margin-top: 70px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    overflow-y: auto;
+    overflow: visible;
     overflow-x: hidden;
-    padding: 60px 20px 80px;
+    padding: 60px 20px 60px;
 }
 
 /* 首页时body允许滚动 */
@@ -365,6 +365,7 @@ body.home-active {
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
     border: 3px solid var(--gold);
     background: rgba(0, 0, 0, 0.3);
+    cursor: zoom-in;
 }
 
 .team-photo-frame::before {
@@ -406,6 +407,17 @@ body.home-active {
     letter-spacing: 2px;
     text-shadow: 0 2px 8px rgba(0,0,0,0.8);
     z-index: 3;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.team-photo-zoom-hint {
+    font-size: 0.8rem;
+    font-weight: 400;
+    letter-spacing: 1px;
+    opacity: 0.85;
+    font-family: var(--font-sans);
 }
 
 @media (max-width: 768px) {
