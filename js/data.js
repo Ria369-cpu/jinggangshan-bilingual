@@ -858,5 +858,10 @@ const groupPhotos = [
     { id: 7, src: 'images/photos/photo7.jpg', title: '活动中心 合唱', titleEn: 'Activity Center - Chorus' },
     { id: 8, src: 'images/photos/photo8.jpg', title: '活动中心 合影', titleEn: 'Activity Center - Group Photo' },
     { id: 9, src: 'images/photos/photo9.jpg', title: '活动中心 绘制队旗', titleEn: 'Activity Center - Painting Team Flag' },
-    { id: 10, src: 'images/photos/photo10.jpg', title: '井冈山革命博物馆 参观', titleEn: 'Jinggangshan Revolutionary Museum - Visit' }
+    { id: 10, src: 'images/photos/photo10.jpg', title: '井冈山革命博物馆 参观', titleEn: 'Jinggangshan Revolutionary Museum - Visit' },
+    { id: 11, src: 'images/photos/photo11.jpg', title: '井冈山革命博物馆 围观', titleEn: 'Jinggangshan Revolutionary Museum - Watching' },
+    { id: 12, src: 'images/photos/photo12.jpg', title: '上井红军造币厂 参观', titleEn: 'Shangjing Red Army Mint - Visit' },
+    { id: 13, src: 'images/photos/photo13.jpg', title: '挑粮小道 合影', titleEn: 'Grain-carrying Path - Group Photo' },
+    { id: 14, src: 'images/photos/photo14.jpg', title: '挑粮小道 急行军', titleEn: 'Grain-carrying Path - Rapid March' },
+    { id: 15, src: 'images/photos/photo15.jpg', title: '朱毛旧居 合影', titleEn: 'Zhu-Mao Former Residence - Group Photo' }
 ];
