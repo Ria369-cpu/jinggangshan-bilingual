@@ -50,6 +50,11 @@ function initNavigation() {
     document.body.classList.add('home-active');
 
     function switchPage(pageName) {
+        // 切换页面前暂停所有音频
+        if (typeof timelineModule !== 'undefined' && timelineModule.pauseAllAudio) {
+            timelineModule.pauseAllAudio();
+        }
+
         // 更新导航激活状态
         navLinks.forEach(link => {
             link.classList.remove('active');
