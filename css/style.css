@@ -186,9 +186,8 @@ body.home-active {
     overflow-y: auto;
 }
 
-/* 首页时确保page-container和footer完全不占空间 */
-body.home-active .page-container,
-body.home-active #mainFooter {
+/* 首页时确保page-container完全不占空间，footer正常显示 */
+body.home-active .page-container {
     display: none !important;
 }
 
