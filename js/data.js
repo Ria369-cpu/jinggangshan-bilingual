@@ -849,27 +849,14 @@ const comparisonImages = {
 // 团体照片数据
 // Group photo data
 const groupPhotos = [
-    { id: 1, src: 'images/photos/photo1.jpg', title: '实践团出发合影', titleEn: 'Practice Team Departure Group Photo' },
-    { id: 2, src: 'images/photos/photo2.jpg', title: '井冈山革命博物馆前合影', titleEn: 'Group Photo in Front of Jinggangshan Revolutionary Museum' },
-    { id: 3, src: 'images/photos/photo3.jpg', title: '黄洋界合影', titleEn: 'Group Photo at Huangyangjie' },
-    { id: 4, src: 'images/photos/photo4.jpg', title: '八角楼学习合影', titleEn: 'Study Group Photo at Octagonal Building' },
-    { id: 5, src: 'images/photos/photo5.jpg', title: '茅坪旧址参观', titleEn: 'Visiting Maoping Historical Site' },
-    { id: 6, src: 'images/photos/photo6.jpg', title: '小井红军医院缅怀', titleEn: 'Honoring Martyrs at Xiaojing Red Army Hospital' },
-    { id: 7, src: 'images/photos/photo7.jpg', title: '烈士陵园敬献花篮', titleEn: 'Presenting Flower Basket at Martyrs Cemetery' },
-    { id: 8, src: 'images/photos/photo8.jpg', title: '三湾改编情景教学', titleEn: 'Sanwan Reorganization Scenario Teaching' },
-    { id: 9, src: 'images/photos/photo9.jpg', title: '龙江书院参观学习', titleEn: 'Study Visit at Longjiang Academy' },
-    { id: 10, src: 'images/photos/photo10.jpg', title: '挑粮小道体验', titleEn: 'Grain-carrying Path Experience' },
-    { id: 11, src: 'images/photos/photo11.jpg', title: '红色文化交流活动', titleEn: 'Red Culture Exchange Activity' },
-    { id: 12, src: 'images/photos/photo12.jpg', title: '实践团总结大会', titleEn: 'Practice Team Summary Meeting' },
-    { id: 13, src: 'images/photos/photo13.jpg', title: '团队合影', titleEn: 'Team Group Photo' },
-    { id: 14, src: 'images/photos/photo14.jpg', title: '实践活动留念', titleEn: 'Practice Activity Souvenir' },
-    { id: 15, src: 'images/photos/photo15.jpg', title: '红色足迹', titleEn: 'Red Footprints' },
-    { id: 16, src: 'images/photos/photo16.jpg', title: '八角楼 讲解', titleEn: 'Octagonal Building - Explanation' },
-    { id: 17, src: 'images/photos/photo17.jpg', title: '村民家 合影', titleEn: "Villager's Home - Group Photo" },
-    { id: 18, src: 'images/photos/photo18.jpg', title: '村民家 午餐', titleEn: "Villager's Home - Lunch" },
-    { id: 19, src: 'images/photos/photo19.jpg', title: '村民家 做饭', titleEn: "Villager's Home - Cooking" },
-    { id: 20, src: 'images/photos/photo20.jpg', title: '黄洋界 合影', titleEn: 'Huangyangjie - Group Photo' },
-    { id: 21, src: 'images/photos/photo21.jpg', title: '活动中心 编织草鞋', titleEn: 'Activity Center - Weaving Straw Sandals' },
-    { id: 22, src: 'images/photos/photo22.jpg', title: '活动中心 合唱', titleEn: 'Activity Center - Chorus' },
-    { id: 23, src: 'images/photos/photo23.jpg', title: '活动中心 合影', titleEn: 'Activity Center - Group Photo' }
+    { id: 1, src: 'images/photos/photo1.jpg', title: '八角楼 讲解', titleEn: 'Octagonal Building - Explanation' },
+    { id: 2, src: 'images/photos/photo2.jpg', title: '村民家 合影', titleEn: "Villager's Home - Group Photo" },
+    { id: 3, src: 'images/photos/photo3.jpg', title: '村民家 午餐', titleEn: "Villager's Home - Lunch" },
+    { id: 4, src: 'images/photos/photo4.jpg', title: '村民家 做饭', titleEn: "Villager's Home - Cooking" },
+    { id: 5, src: 'images/photos/photo5.jpg', title: '黄洋界 合影', titleEn: 'Huangyangjie - Group Photo' },
+    { id: 6, src: 'images/photos/photo6.jpg', title: '活动中心 编织草鞋', titleEn: 'Activity Center - Weaving Straw Sandals' },
+    { id: 7, src: 'images/photos/photo7.jpg', title: '活动中心 合唱', titleEn: 'Activity Center - Chorus' },
+    { id: 8, src: 'images/photos/photo8.jpg', title: '活动中心 合影', titleEn: 'Activity Center - Group Photo' },
+    { id: 9, src: 'images/photos/photo9.jpg', title: '活动中心 绘制队旗', titleEn: 'Activity Center - Painting Team Flag' },
+    { id: 10, src: 'images/photos/photo10.jpg', title: '井冈山革命博物馆 参观', titleEn: 'Jinggangshan Revolutionary Museum - Visit' }
 ];
