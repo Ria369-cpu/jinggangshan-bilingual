@@ -18,12 +18,56 @@ const timelineModule = {
 
     // 初始化音频播放器
     initAudioPlayers() {
-        const beforeBtn = document.getElementById('audioBeforeBtn');
-        const afterBtn = document.getElementById('audioAfterBtn');
-        if (!beforeBtn || !afterBtn) return;
+        const beforePlayer = document.getElementById('audioBeforePlayer');
+        const afterPlayer = document.getElementById('audioAfterPlayer');
+        if (!beforePlayer || !afterPlayer) return;
 
-        beforeBtn.addEventListener('click', () => this.toggleAudio('before'));
-        afterBtn.addEventListener('click', () => this.toggleAudio('after'));
+        // 绑定播放按钮
+        document.getElementById('audioBeforeBtn').addEventListener('click', () => this.toggleAudio('before'));
+        document.getElementById('audioAfterBtn').addEventListener('click', () => this.toggleAudio('after'));
+
+        // 绑定进度条点击跳转
+        document.getElementById('audioBeforeProgress').addEventListener('click', (e) => this.seekAudio('before', e));
+        document.getElementById('audioAfterProgress').addEventListener('click', (e) => this.seekAudio('after', e));
+    },
+
+    // 格式化时间
+    formatTime(seconds) {
+        if (isNaN(seconds)) return '0:00';
+        const m = Math.floor(seconds / 60);
+        const s = Math.floor(seconds % 60);
+        return m + ':' + (s < 10 ? '0' + s : s);
+    },
+
+    // 更新进度条
+    updateProgress(type) {
+        const audio = type === 'before' ? this.beforeAudio : this.afterAudio;
+        if (!audio) return;
+
+        const fill = document.getElementById('audio' + (type === 'before' ? 'Before' : 'After') + 'Fill');
+        const dot = document.getElementById('audio' + (type === 'before' ? 'Before' : 'After') + 'Dot');
+        const current = document.getElementById('audio' + (type === 'before' ? 'Before' : 'After') + 'Current');
+        const duration = document.getElementById('audio' + (type === 'before' ? 'Before' : 'After') + 'Duration');
+
+        if (audio.duration) {
+            const percent = (audio.currentTime / audio.duration) * 100;
+            fill.style.width = percent + '%';
+            dot.style.left = percent + '%';
+            current.textContent = this.formatTime(audio.currentTime);
+            duration.textContent = this.formatTime(audio.duration);
+        }
+    },
+
+    // 进度条点击跳转
+    seekAudio(type, e) {
+        const audio = type === 'before' ? this.beforeAudio : this.afterAudio;
+        const progress = document.getElementById('audio' + (type === 'before' ? 'Before' : 'After') + 'Progress');
+        if (!audio || !audio.duration) return;
+
+        const rect = progress.getBoundingClientRect();
+        const percent = (e.clientX - rect.left) / rect.width;
+        audio.currentTime = percent * audio.duration;
+        this.updateProgress(type);
     },
 
     // 切换音频播放/暂停
@@ -34,52 +78,87 @@ const timelineModule = {
         if (!data) return;
 
         const audioSrc = type === 'before' ? data.audioBefore : data.audioAfter;
-        const btn = type === 'before' 
+        if (!audioSrc) return;
+
+        const btn = type === 'before'
             ? document.getElementById('audioBeforeBtn')
             : document.getElementById('audioAfterBtn');
         const icon = btn.querySelector('.audio-icon');
 
-        if (!audioSrc) return;
-
         // 如果有其他音频在播放，先暂停
-        if (this.currentAudio && this.currentAudio !== btn._audio) {
-            this.currentAudio.pause();
-            const otherBtn = this.currentAudio._type === 'before'
-                ? document.getElementById('audioBeforeBtn')
-                : document.getElementById('audioAfterBtn');
-            if (otherBtn) {
-                otherBtn.classList.remove('playing');
-                const otherIcon = otherBtn.querySelector('.audio-icon');
-                if (otherIcon) otherIcon.textContent = '🔊';
+        if (this.currentAudio) {
+            const otherType = this.currentAudio._type;
+            if (otherType !== type) {
+                this.currentAudio.pause();
+                const otherBtn = otherType === 'before'
+                    ? document.getElementById('audioBeforeBtn')
+                    : document.getElementById('audioAfterBtn');
+                if (otherBtn) {
+                    otherBtn.classList.remove('playing');
+                    const otherIcon = otherBtn.querySelector('.audio-icon');
+                    if (otherIcon) otherIcon.textContent = '▶';
+                }
             }
         }
 
+        const audio = type === 'before' ? this.beforeAudio : this.afterAudio;
+
         // 如果点击的是当前正在播放的音频，暂停
-        if (btn._audio && this.currentAudio === btn._audio && !btn._audio.paused) {
-            btn._audio.pause();
+        if (audio && this.currentAudio === audio && !audio.paused) {
+            audio.pause();
             btn.classList.remove('playing');
-            icon.textContent = '🔊';
+            icon.textContent = '▶';
             this.currentAudio = null;
             return;
         }
 
         // 创建或播放音频
-        if (!btn._audio) {
-            btn._audio = new Audio(audioSrc);
-            btn._audio._type = type;
-            btn._audio.addEventListener('ended', () => {
+        let targetAudio = audio;
+        if (!targetAudio) {
+            targetAudio = new Audio(audioSrc);
+            targetAudio._type = type;
+            targetAudio.addEventListener('timeupdate', () => {
+                this.updateProgress(type);
+            });
+            targetAudio.addEventListener('loadedmetadata', () => {
+                this.updateProgress(type);
+            });
+            targetAudio.addEventListener('ended', () => {
                 btn.classList.remove('playing');
-                icon.textContent = '🔊';
+                icon.textContent = '▶';
                 this.currentAudio = null;
             });
+            if (type === 'before') {
+                this.beforeAudio = targetAudio;
+            } else {
+                this.afterAudio = targetAudio;
+            }
         }
 
-        btn._audio.play().then(() => {
+        targetAudio.play().then(() => {
             btn.classList.add('playing');
-            icon.textContent = '⏸️';
-            this.currentAudio = btn._audio;
+            icon.textContent = '⏸';
+            this.currentAudio = targetAudio;
         }).catch(err => {
             console.error('音频播放失败:', err);
+        });
+    },
+
+    // 暂停所有音频（切换页面时调用）
+    pauseAllAudio() {
+        if (this.currentAudio) {
+            this.currentAudio.pause();
+            this.currentAudio = null;
+        }
+        ['before', 'after'].forEach(type => {
+            const btn = type === 'before'
+                ? document.getElementById('audioBeforeBtn')
+                : document.getElementById('audioAfterBtn');
+            if (btn) {
+                btn.classList.remove('playing');
+                const icon = btn.querySelector('.audio-icon');
+                if (icon) icon.textContent = '▶';
+            }
         });
     },
 
@@ -212,29 +291,52 @@ const timelineModule = {
                     afterText.textContent = lang === 'zh' ? data.afterText : data.afterTextEn;
                 }
 
-                // 显示/隐藏音频按钮
-                const beforeBtn = document.getElementById('audioBeforeBtn');
-                const afterBtn = document.getElementById('audioAfterBtn');
-                if (beforeBtn) {
-                    beforeBtn.style.display = data.audioBefore ? 'flex' : 'none';
+                // 显示/隐藏音频播放器
+                const beforePlayer = document.getElementById('audioBeforePlayer');
+                const afterPlayer = document.getElementById('audioAfterPlayer');
+                if (beforePlayer) {
+                    beforePlayer.style.display = data.audioBefore ? 'flex' : 'none';
                     // 切换景点时重置音频状态
-                    if (beforeBtn._audio) {
-                        beforeBtn._audio.pause();
-                        beforeBtn.classList.remove('playing');
-                        const icon = beforeBtn.querySelector('.audio-icon');
-                        if (icon) icon.textContent = '🔊';
-                        beforeBtn._audio = null;
+                    if (this.beforeAudio) {
+                        this.beforeAudio.pause();
+                        this.beforeAudio = null;
                     }
+                    const btn = document.getElementById('audioBeforeBtn');
+                    if (btn) {
+                        btn.classList.remove('playing');
+                        const icon = btn.querySelector('.audio-icon');
+                        if (icon) icon.textContent = '▶';
+                    }
+                    // 重置进度条
+                    const fill = document.getElementById('audioBeforeFill');
+                    const dot = document.getElementById('audioBeforeDot');
+                    const current = document.getElementById('audioBeforeCurrent');
+                    const duration = document.getElementById('audioBeforeDuration');
+                    if (fill) fill.style.width = '0%';
+                    if (dot) dot.style.left = '0%';
+                    if (current) current.textContent = '0:00';
+                    if (duration) duration.textContent = '0:00';
                 }
-                if (afterBtn) {
-                    afterBtn.style.display = data.audioAfter ? 'flex' : 'none';
-                    if (afterBtn._audio) {
-                        afterBtn._audio.pause();
-                        afterBtn.classList.remove('playing');
-                        const icon = afterBtn.querySelector('.audio-icon');
-                        if (icon) icon.textContent = '🔊';
-                        afterBtn._audio = null;
+                if (afterPlayer) {
+                    afterPlayer.style.display = data.audioAfter ? 'flex' : 'none';
+                    if (this.afterAudio) {
+                        this.afterAudio.pause();
+                        this.afterAudio = null;
                     }
+                    const btn = document.getElementById('audioAfterBtn');
+                    if (btn) {
+                        btn.classList.remove('playing');
+                        const icon = btn.querySelector('.audio-icon');
+                        if (icon) icon.textContent = '▶';
+                    }
+                    const fill = document.getElementById('audioAfterFill');
+                    const dot = document.getElementById('audioAfterDot');
+                    const current = document.getElementById('audioAfterCurrent');
+                    const duration = document.getElementById('audioAfterDuration');
+                    if (fill) fill.style.width = '0%';
+                    if (dot) dot.style.left = '0%';
+                    if (current) current.textContent = '0:00';
+                    if (duration) duration.textContent = '0:00';
                 }
                 this.currentAudio = null;
             }
