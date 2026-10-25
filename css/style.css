@@ -155,6 +155,10 @@ body {
     padding-top: 70px;
 }
 
+.page-container.hidden {
+    display: none;
+}
+
 .hero.page-view {
     display: none;
 }
