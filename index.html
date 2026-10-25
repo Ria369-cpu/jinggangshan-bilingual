@@ -106,20 +106,44 @@
                     <div class="story-card story-before">
                         <div class="story-header">
                             <h4 data-i18n="past.storyBefore">历史故事</h4>
-                            <button class="audio-btn" id="audioBeforeBtn" style="display:none;" title="播放音频">
-                                <span class="audio-icon">🔊</span>
-                            </button>
                         </div>
                         <p id="beforeStoryText"></p>
+                        <div class="audio-player" id="audioBeforePlayer" style="display:none;">
+                            <button class="audio-play-btn" id="audioBeforeBtn" title="播放音频">
+                                <span class="audio-icon">▶</span>
+                            </button>
+                            <div class="audio-progress-wrap">
+                                <div class="audio-progress" id="audioBeforeProgress">
+                                    <div class="audio-progress-fill" id="audioBeforeFill"></div>
+                                    <div class="audio-progress-dot" id="audioBeforeDot"></div>
+                                </div>
+                                <div class="audio-time">
+                                    <span id="audioBeforeCurrent">0:00</span>
+                                    <span id="audioBeforeDuration">0:00</span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <div class="story-card story-after">
                         <div class="story-header">
                             <h4 data-i18n="past.storyAfter">今日面貌</h4>
-                            <button class="audio-btn" id="audioAfterBtn" style="display:none;" title="播放音频">
-                                <span class="audio-icon">🔊</span>
-                            </button>
                         </div>
                         <p id="afterStoryText"></p>
+                        <div class="audio-player" id="audioAfterPlayer" style="display:none;">
+                            <button class="audio-play-btn" id="audioAfterBtn" title="播放音频">
+                                <span class="audio-icon">▶</span>
+                            </button>
+                            <div class="audio-progress-wrap">
+                                <div class="audio-progress" id="audioAfterProgress">
+                                    <div class="audio-progress-fill" id="audioAfterFill"></div>
+                                    <div class="audio-progress-dot" id="audioAfterDot"></div>
+                                </div>
+                                <div class="audio-time">
+                                    <span id="audioAfterCurrent">0:00</span>
+                                    <span id="audioAfterDuration">0:00</span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -270,7 +294,14 @@
             </div>
             <div class="footer-section">
                 <h4 data-i18n="footer.contact">联系方式</h4>
-                <p data-i18n="footer.contactDesc">欢迎交流合作，共同传播红色文化</p>
+                <div class="contact-item">
+                    <span class="contact-icon">📞</span>
+                    <a href="tel:15545985598" class="contact-link">15545985598</a>
+                </div>
+                <div class="contact-item">
+                    <span class="contact-icon">✉️</span>
+                    <a href="mailto:3830074794@qq.com" class="contact-link">3830074794@qq.com</a>
+                </div>
             </div>
         </div>
         <div class="footer-bottom">
