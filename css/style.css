@@ -184,11 +184,37 @@ body {
 /* 首页时body允许滚动，但确保没有多余空白 */
 body.home-active {
     overflow-y: auto;
+    background: url('../images/hero.jpg') center/cover no-repeat fixed;
+}
+
+body.home-active::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(180deg, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.25) 40%, rgba(0,0,0,0.45) 100%),
+                radial-gradient(ellipse at center, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.5) 100%);
+    z-index: -1;
+    pointer-events: none;
 }
 
 /* 首页时确保page-container完全不占空间，footer正常显示 */
 body.home-active .page-container {
     display: none !important;
+}
+
+/* 首页时hero背景透明，用body的背景 */
+body.home-active .hero {
+    min-height: auto;
+    background: transparent;
+}
+
+body.home-active .hero-bg,
+body.home-active .hero::before,
+body.home-active .hero-overlay {
+    display: none;
 }
 
 .hero-bg {
