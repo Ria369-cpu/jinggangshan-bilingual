@@ -181,9 +181,15 @@ body {
     padding: 60px 20px 60px;
 }
 
-/* 首页时body允许滚动 */
+/* 首页时body允许滚动，但确保没有多余空白 */
 body.home-active {
     overflow-y: auto;
+}
+
+/* 首页时确保page-container和footer完全不占空间 */
+body.home-active .page-container,
+body.home-active #mainFooter {
+    display: none !important;
 }
 
 .hero-bg {
