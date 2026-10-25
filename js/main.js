@@ -51,6 +51,11 @@ function initNavigation() {
     }
     // 首页时禁止body纵向滚动
     document.body.classList.add('home-active');
+    // 首页时隐藏page-container避免空白
+    const pageContainerInit = document.querySelector('.page-container');
+    if (pageContainerInit) {
+        pageContainerInit.classList.add('hidden');
+    }
 
     function switchPage(pageName) {
         // 切换页面前暂停所有音频
@@ -78,14 +83,15 @@ function initNavigation() {
 
         // 控制footer显示（首页不显示footer）
         const footer = document.getElementById('mainFooter');
-        if (footer) {
-            if (pageName === 'home') {
-                footer.style.display = 'none';
-                document.body.classList.add('home-active');
-            } else {
-                footer.style.display = 'block';
-                document.body.classList.remove('home-active');
-            }
+        const pageContainer = document.querySelector('.page-container');
+        if (pageName === 'home') {
+            if (footer) footer.style.display = 'none';
+            document.body.classList.add('home-active');
+            if (pageContainer) pageContainer.classList.add('hidden');
+        } else {
+            if (footer) footer.style.display = 'block';
+            document.body.classList.remove('home-active');
+            if (pageContainer) pageContainer.classList.remove('hidden');
         }
 
         // 滚动到顶部
